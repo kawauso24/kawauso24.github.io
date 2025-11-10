@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>kawauso24 – Portfolio</title>
+    <meta name="description" content="On-device LLM × App Engineering – Portfolio of kawauso24" />
+    <meta property="og:title" content="kawauso24 – Portfolio" />
+    <meta property="og:description" content="On-device LLM × App Engineering – Portfolio of kawauso24" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://kawauso24.github.io/" />
+    <meta name="theme-color" content="#0a0a0a" />
+    <link rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Ccircle cx='128' cy='128' r='112' fill='%23000000'/%3E%3C/svg%3E" />
+    <style>
+        :root {
+            --bg: #f7f7f7;
+            --panel: #ffffffcc;
+            --text: #0a0a0a;
+            --muted: #636366;
+            --line: #e5e5ea;
+            --accent: #0a84ff;
+            --shadow: 0 10px 30px rgba(0, 0, 0, .08);
+            --radius: 20px;
+            --blur: saturate(180%) blur(20px);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #0b0b0c;
+                --panel: #111112cc;
+                --text: #fbfbfd;
+                --muted: #a1a1a6;
+                --line: #1c1c1e;
+                --accent: #0a84ff;
+                --shadow: 0 10px 30px rgba(0, 0, 0, .5);
+            }
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+            color: var(--text);
+            background: radial-gradient(1200px 800px at 80% -10%, #0a84ff1a, transparent 60%), var(--bg);
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+
+        .container {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Top Nav */
+        .nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            backdrop-filter: var(--blur);
+            -webkit-backdrop-filter: var(--blur);
+            background: var(--panel);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            letter-spacing: .2px;
+        }
+
+        .brand .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--accent);
+        }
+
+        .nav a {
+            color: var(--text);
+            text-decoration: none;
+            opacity: .9
+        }
+
+        .nav a:hover {
+            opacity: 1
+        }
+
+        .links {
+            display: flex;
+            gap: 18px;
+            align-items: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 14px;
+            border-radius: 14px;
+            border: 1px solid var(--line);
+            background: transparent;
+            color: var(--text);
+            text-decoration: none;
+            transition: .2s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-1px);
+            box-shadow: var(--shadow)
+        }
+
+        .btn.primary {
+            background: var(--text);
+            color: var(--bg);
+            border-color: transparent
+        }
+
+        /* Hero */
+        .hero {
+            padding: 68px 0 32px;
+            text-align: center;
+        }
+
+        .kicker {
+            display: inline-block;
+            padding: 6px 12px;
+            border: 1px solid var(--line);
+            border-radius: 100px;
+            font-size: 13px;
+            color: var(--muted);
+            background: var(--panel);
+            backdrop-filter: var(--blur);
+        }
+
+        h1 {
+            font-size: clamp(28px, 5vw, 56px);
+            line-height: 1.06;
+            margin: 16px 0 10px;
+            letter-spacing: -.02em;
+        }
+
+        .sub {
+            color: var(--muted);
+            font-size: clamp(14px, 2.4vw, 18px);
+            margin: 0 auto 22px;
+            max-width: 720px;
+        }
+
+        .cta {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        /* Sections */
+        section {
+            padding: 42px 0 12px;
+        }
+
+        .section-head {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            margin-bottom: 18px;
+        }
+
+        .section-head h2 {
+            font-size: 22px;
+            margin: 0;
+            letter-spacing: .2px
+        }
+
+        .section-head p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 14px
+        }
+
+        /* Cards */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 16px;
+        }
+
+        .card {
+            grid-column: span 12;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            background: linear-gradient(180deg, var(--panel), transparent 120%);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        @media(min-width:720px) {
+            .card {
+                grid-column: span 6
+            }
+        }
+
+        .card-inner {
+            padding: 18px 18px 16px
+        }
+
+        .eyebrow {
+            font-size: 12px;
+            color: var(--muted);
+            letter-spacing: .3px;
+            text-transform: uppercase
+        }
+
+        .card h3 {
+            margin: 6px 0 8px;
+            font-size: 18px
+        }
+
+        .meta {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin: 10px 0
+        }
+
+        .chip {
+            font-size: 12px;
+            padding: 6px 10px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            background: rgba(255, 255, 255, .04)
+        }
+
+        .card p {
+            margin: 10px 0 14px;
+            color: var(--muted)
+        }
+
+        .card a.more {
+            display: inline-flex;
+            gap: 8px;
+            align-items: center;
+            text-decoration: none;
+            color: var(--accent);
+            font-weight: 600
+        }
+
+        /* Skills chips */
+        .chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px
+        }
+
+        /* Footer */
+        footer {
+            padding: 48px 0 64px;
+            color: var(--muted);
+            text-align: center
+        }
+
+        /* Tiny icons */
+        .icon {
+            width: 16px;
+            height: 16px;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="nav">
+        <div class="container nav-inner">
+            <a class="brand" href="#top"><span class="dot"></span>kawauso24</a>
+            <div class="links">
+                <a href="#projects">Projects</a>
+                <a href="#research">Research</a>
+                <a href="#skills">Skills</a>
+                <a class="btn" href="https://github.com/kawauso24" target="_blank" rel="noreferrer">GitHub</a>
+                <a class="btn primary" href="mailto:kawauso24@example.com">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!---
+    <header class="hero container" id="top">
+        <span class="kicker">On-device LLM × App Engineering</span>
+        <h1>北大 情報理工 / 修士進学予定 — オンデバイスで“動くAI”を作ります。</h1>
+        <p class="sub">
+            llama.cppやOllamaを活用し、スマホやローカル環境でLLMを動かす実装・評価に取り組んでいます。研究では日本語LLMの応用と評価、個人開発ではiOSアプリへの統合やローカルAPI化を進めています。</p>
+        <div class="cta">
+            <a class="btn primary" href="#projects">プロジェクトを見る</a>
+            <a class="btn" href="/resume.pdf" target="_blank" rel="noreferrer">Resume</a>
+        </div>
+    </header>
+    --->
+
+    <main class="container">
+        <section id="projects">
+            <div class="section-head">
+                <h2>Projects</h2>
+            </div>
+            <div class="grid">
+                <!-- Card 1 -->
+                <article class="card">
+                    <div class="card-inner">
+                        <div class="eyebrow">On-Device App</div>
+                        <h3>llama-ios-demo — iPhone上で量子化LLMをローカル推論</h3>
+                        <div class="meta">
+                            <span class="chip">SwiftUI</span>
+                            <span class="chip">Objective‑C++ bridge</span>
+                            <span class="chip">llama.cpp</span>
+                            <span class="chip">GGUF / quantization</span>
+                        </div>
+                        <p>SwiftUIのチャットUIから`libllama.a`を呼び出し、端末内で日本語LLMを推論。メモリ/コンテキスト最適化や読み込み高速化の工夫を記載。</p>
+                        <a class="more" href="https://github.com/kawauso24/llama-ios-demo" target="_blank"
+                            rel="noreferrer">View Repository
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7 17L17 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                                <path d="M9 7H17V15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+                <!-- Card 2 -->
+                <article class="card">
+                    <div class="card-inner">
+                        <div class="eyebrow">Local API / MLOps</div>
+                        <h3>local-llm-api-ollama — Mac StudioでローカルLLM APIを運用</h3>
+                        <div class="meta">
+                            <span class="chip">Ollama</span>
+                            <span class="chip">REST</span>
+                            <span class="chip">Python client</span>
+                            <span class="chip">Ops notes</span>
+                        </div>
+                        <p>Apple SiliconのMac StudioにOllamaを導入し、LAN内から叩けるAPIとして運用。セットアップ手順、テストスクリプト、簡易負荷/セキュリティメモを提供。</p>
+                        <a class="more" href="https://github.com/kawauso24/local-llm-api-ollama" target="_blank"
+                            rel="noreferrer">View Repository
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7 17L17 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                                <path d="M9 7H17V15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+                <!-- Card 3 -->
+                <article class="card">
+                    <div class="card-inner">
+                        <div class="eyebrow">Evaluation / Analysis</div>
+                        <h3>llm-legal-benchmark — 司法試験データでLLM比較・可視化</h3>
+                        <div class="meta">
+                            <span class="chip">JSON schema</span>
+                            <span class="chip">pandas</span>
+                            <span class="chip">matplotlib</span>
+                        </div>
+                        <p>Ollama API経由で複数モデルを一括評価。出力をJSONに保存し、ノートブックで集計/可視化。データの権利に配慮し、サンプルのみ同梱。</p>
+                        <a class="more" href="https://github.com/kawauso24/llm-legal-benchmark" target="_blank"
+                            rel="noreferrer">View Repository
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7 17L17 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                                <path d="M9 7H17V15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="research">
+            <div class="section-head">
+                <h2>Research</h2>
+                <p>日本語LLMの応用と評価</p>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <p>研究では、日本語LLMのタスク適用と評価設計に取り組んでいます。オンデバイス推論の制約（メモリ/速度/電力）や、ローカルAPI運用の現実的なUXを踏まえ、<strong>“ユーザーが触れるAI”</strong>を目標に開発します。
+                    </p>
+                    <div class="chips">
+                        <span class="chip">On‑device inference</span>
+                        <span class="chip">Prompt design</span>
+                        <span class="chip">RAG (optional)</span>
+                        <span class="chip">Evaluation</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <div class="section-head">
+                <h2>Skills</h2>
+                <p>実装寄り／アプリ統合志向</p>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="chips">
+                        <span class="chip">Python</span>
+                        <span class="chip">Swift / SwiftUI</span>
+                        <span class="chip">C++ / Obj‑C++ bridge</span>
+                        <span class="chip">llama.cpp / GGUF</span>
+                        <span class="chip">Ollama</span>
+                        <span class="chip">FastAPI</span>
+                        <span class="chip">HuggingFace</span>
+                        <span class="chip">Git / Docker</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="section-head">
+                <h2>Contact</h2>
+                <p>気軽にどうぞ</p>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <p>インターンや共同開発のご相談はメール、もしくはGitHubからお願いします。</p>
+                    <div class="chips">
+                        <a class="btn" href="mailto:kawauso24@example.com">Email</a>
+                        <a class="btn" href="https://github.com/kawauso24" target="_blank" rel="noreferrer">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">© <span id="y"></span> kawauso24 — Built with GitHub Pages</div>
+    </footer>
+
+    <script>
+        document.getElementById('y').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>

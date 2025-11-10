@@ -52,6 +52,15 @@
             text-rendering: optimizeLegibility;
         }
 
+        a, a:visited {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: var(--accent);
+        }
+
         .container {
             max-width: 1080px;
             margin: 0 auto;
@@ -297,7 +306,6 @@
         </div>
     </nav>
 
-    <!---
     <header class="hero container" id="top">
         <span class="kicker">On-device LLM × App Engineering</span>
         <h1>北大 情報理工 / 修士進学予定 — オンデバイスで“動くAI”を作ります。</h1>
@@ -308,9 +316,35 @@
             <a class="btn" href="/resume.pdf" target="_blank" rel="noreferrer">Resume</a>
         </div>
     </header>
-    --->
 
     <main class="container">
+        <section id="experience">
+            <div class="section-head">
+                <h2>Experience</h2>
+            </div>
+            <a href="https://www.ist.hokudai.ac.jp/divisions/csit/"><div class="card">
+                <div class="card-inner">
+                    <div class="eyebrow">Education</div>
+                    <h3>北海道大学 工学部 情報エレクトロニクス学科 情報理工学コース</h3>
+                    <p>2022年4月に入学。2026年4月から同大学大学院 情報理工学コース 修士課程に進学予定。</p>
+                </div>
+            </div></a>
+            <a href="https://www-kb.ist.hokudai.ac.jp/"><div class="card">
+                <div class="card-inner">
+                    <div class="eyebrow">Lab</div>
+                    <h3>北海道大学 大学院情報科学研究院 情報理工学部門 知識ソフトウェア科学分野 知識ベース研究室</h3>
+                    <p>2024年10月より配属。LLMを中心とした自然言語処理に関して研究。</p>
+                </div>
+            </div></a>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="eyebrow">Part-time work</div>
+                    <h3>携帯キャリアショップスタッフ</h3>
+                    <p>2023年11月より勤務。ユーザーに最も近い立場で、どのようなUI/UXが求められているか、それをどのように分かりやすく伝えられるかを考える経験に。</p>
+                </div>
+            </div>
+        </section>
+
         <section id="projects">
             <div class="section-head">
                 <h2>Projects</h2>
@@ -384,7 +418,6 @@
         <section id="research">
             <div class="section-head">
                 <h2>Research</h2>
-                <p>日本語LLMの応用と評価</p>
             </div>
             <div class="card">
                 <div class="card-inner">
@@ -403,17 +436,14 @@
         <section id="skills">
             <div class="section-head">
                 <h2>Skills</h2>
-                <p>実装寄り／アプリ統合志向</p>
             </div>
             <div class="card">
                 <div class="card-inner">
                     <div class="chips">
                         <span class="chip">Python</span>
-                        <span class="chip">Swift / SwiftUI</span>
-                        <span class="chip">C++ / Obj‑C++ bridge</span>
+                        <span class="chip">C / C++</span>
                         <span class="chip">llama.cpp / GGUF</span>
-                        <span class="chip">Ollama</span>
-                        <span class="chip">FastAPI</span>
+                        <span class="chip">Ollama / LiteLLM</span>
                         <span class="chip">HuggingFace</span>
                         <span class="chip">Git / Docker</span>
                     </div>
@@ -424,7 +454,6 @@
         <section id="contact">
             <div class="section-head">
                 <h2>Contact</h2>
-                <p>気軽にどうぞ</p>
             </div>
             <div class="card">
                 <div class="card-inner">

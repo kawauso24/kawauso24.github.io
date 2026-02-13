@@ -25,8 +25,9 @@
       </a>
       <div class="nav-links">
         <a href="#career">Career</a>
+        <a href="#research-theme">Research Theme</a>
         <a href="#projects">Projects</a>
-        <a href="#strengths">Strengths</a>
+        <a href="#presentations">Presentations</a>
         <a href="#contact">Contact</a>
       </div>
       <button class="nav-cta" type="button" data-scroll="contact">Talk</button>
@@ -63,6 +64,11 @@
             <h3><a href="https://www-kb.ist.hokudai.ac.jp/">知識ベース研究室</a></h3>
           </article>
           <article class="career-card reveal">
+            <p class="career-period"><time datetime="2023">2023.11</time> - Present</p>
+            <h3>ドコモショップ</h3>
+            <p>ドコモショップ店頭でスタッフとして勤務．エンドユーザーに最も近い立場でICT機器の販売・サポートを担当し，ユーザーの求める機能やサービスを体感．</p>
+          </article>
+          <article class="career-card reveal">
             <p class="career-period"><time datetime="2023">2022.04</time> - <time datetime="2026">2026.03</time></p>
             <h3>北海道大学 工学部 情報エレクトロニクス学科 情報理工学コース</h3>
           </article>
@@ -74,85 +80,104 @@
       </div>
     </section>
 
-    <section class="section" id="projects">
+    <section class="section" id="research-theme">
       <div class="container">
         <div class="section-head">
           <div>
-            <p class="section-kicker">Selected Work</p>
-            <h2>Projects</h2>
+            <p class="section-kicker">Research Theme</p>
+            <h2>研究テーマ</h2>
           </div>
-          <p class="section-note">実装ログ・設計ノート・再現性を意識。</p>
         </div>
-
-        <div class="grid">
-          <article class="card reveal">
-            <div class="card-top">
-              <p class="eyebrow">Featured</p>
-              <h3>llm_civilcode_experiment</h3>
-              <p class="card-desc">民法条文×LLMの実験。条文単位の要約と推論の検証ログを蓄積。</p>
-            </div>
-            <div class="tag-row">
-              <span class="tag">RAG style</span>
-              <span class="tag">Prompting</span>
-              <span class="tag">Evaluation notes</span>
-            </div>
-            <a class="card-link" href="https://github.com/kawauso24/llm_civilcode_experiment.git" target="_blank" rel="noreferrer">View Repository</a>
+        <div class="research-grid">
+          <article class="research-card reveal">
+            <h3>スマートフォン上で駆動するLLM Agent</h3>
+            <p class="research-caption">プライバシーやセキュリティを重視し，端末内で完結する</p>
           </article>
-
-          <article class="card reveal">
-            <div class="card-top">
-              <p class="eyebrow">On-Device App</p>
-              <h3>llama-ios-demo</h3>
-              <p class="card-desc">iPhone上で量子化LLMをローカル推論。UI/推論/最適化を同時に設計。</p>
-            </div>
-            <div class="tag-row">
-              <span class="tag">SwiftUI</span>
-              <span class="tag">Objective-C++</span>
-              <span class="tag">llama.cpp</span>
-            </div>
-            <a class="card-link" href="https://github.com/kawauso24/llama-ios-demo" target="_blank" rel="noreferrer">View Repository</a>
+          <article class="research-card reveal">
+            <h3>日本語タスクにおけるLLM評価設計</h3>
+            <p class="research-caption">評価データとログを整備し、再現性のある比較評価パイプラインを構築。</p>
           </article>
-
-          <article class="card reveal">
-            <div class="card-top">
-              <p class="eyebrow">Local API / MLOps</p>
-              <h3>local-llm-api-ollama</h3>
-              <p class="card-desc">Apple SiliconでOllamaを運用し、LAN内APIとして安定提供。</p>
-            </div>
-            <div class="tag-row">
-              <span class="tag">Ollama</span>
-              <span class="tag">REST</span>
-              <span class="tag">Ops</span>
-            </div>
-            <a class="card-link" href="https://github.com/kawauso24/local-llm-api-ollama" target="_blank" rel="noreferrer">View Repository</a>
+          <article class="research-card reveal">
+            <h3>オンデバイス推論の最適化</h3>
+            <p class="research-caption">量子化設定と推論速度のトレードオフを分析し、実利用向けの最適点を探索。</p>
+          </article>
+          <article class="research-card reveal">
+            <h3>研究実装のUX統合</h3>
+            <p class="research-caption">研究プロトタイプをアプリUIまで落とし込み、利用体験としての価値を評価。</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="strengths">
+    <section class="section" id="projects">
       <div class="container">
         <div class="section-head">
           <div>
-            <p class="section-kicker">Strengths</p>
-            <h2>研究から実装までの一貫性</h2>
+            <p class="section-kicker">Projects</p>
+            <h2>プロジェクト</h2>
           </div>
-          <p class="section-note">研究室の知見と実装力の橋渡し。</p>
+          <p class="section-note">GitHub上で公開しているリポジトリ一覧</p>
         </div>
-        <div class="feature reveal">
+
+        <div class="grid">
+          <article class="card reveal">
+            <div class="card-top">
+              <p class="eyebrow">explainable AI</p>
+              <h3>llm_civilcode_experiment</h3>
+              <p class="card-desc">民法条文×LLMの実験．信頼できるAIの実装のために情報検索とLLMを組み合わせ，さまざまな手法を検証．</p>
+            </div>
+            <div class="tag-row">
+              <span class="tag">RAG</span>
+              <span class="tag">Information Retrieval</span>
+              <span class="tag">Prompting</span>
+              <span class="tag">xAI</span>
+            </div>
+            <a class="card-link" href="https://github.com/kawauso24/llm_civilcode_experiment.git" target="_blank" rel="noreferrer">View Repository</a>
+          </article>
+          <article class="card reveal">
+            <div class="card-top">
+              <p class="eyebrow">on-device LLM</p>
+              <h3>lab_localllm</h3>
+              <p class="card-desc">研究室内のLLM実験環境を整備・運用．個人PCからOpenAI API互換コードでLLMを呼び出せるように．</p>
+            </div>
+            <div class="tag-row">
+              <span class="tag">Local API</span>
+              <span class="tag">Ollama</span>
+              <span class="tag">LiteLLM</span>
+              <span class="tag">On-device LLM</span>
+            </div>
+            <a class="card-link" href="https://github.com/kawauso24/lab_localllm" target="_blank" rel="noreferrer">View Repository</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="presentations">
+      <div class="container">
+        <div class="section-head">
           <div>
-            <h3>「研究」→「実装」→「体験」を一本化</h3>
-            <p>
-              評価設計の視点を持ちながら、プロダクト側のUI/UXに落とし込むことで、
-              “動くAI”の価値を最大化します。
-            </p>
+            <p class="section-kicker">Presentations</p>
+            <h2>対外発表</h2>
           </div>
-          <div class="chips">
-            <span class="chip">On-device inference</span>
-            <span class="chip">Evaluation design</span>
-            <span class="chip">UX engineering</span>
-            <span class="chip">Local API ops</span>
-          </div>
+        </div>
+        <div class="grid">
+          <article class="card reveal">
+            <div class="card-top">
+              <p class="eyebrow">NLP 2026</p>
+              <h3>言語処理学会第32回年次大会</h3>
+              <p class="card-desc">民法条文×LLMの実験に関する発表．LLMを用いることで事前学習を要さない文脈情報を考慮した検索を実装し，その効果検証を行った．</p>
+            </div>
+            <dl class="pub-meta">
+              <dt>author</dt>
+              <dd>榊原 豪太, 李 吉屹, 吉岡 真治</dd>
+              <dt>title</dt>
+              <dd>大規模言語モデルを用いたEnd-to-Endの法令あてはめとその出力を利用した検索拡張手法の検証</dd>
+              <dt>booktitle</dt>
+              <dd>Proceedings of the 32nd Annual Meeting of the Association for Natural Language Processing</dd>
+              <dt>year</dt>
+              <dd>2026</dd>
+            </dl>
+          </article>
         </div>
       </div>
     </section>
@@ -162,30 +187,23 @@
         <div class="section-head">
           <div>
             <p class="section-kicker">Contact</p>
-            <h2>Links & Contact</h2>
+            <h2>連絡先</h2>
           </div>
-          <p class="section-note">ご連絡はメールまたはGitHub経由で。</p>
+          <p class="section-note">ご連絡はメールまたはGitHub経由で</p>
         </div>
 
         <div class="grid">
           <article class="card compact reveal">
-            <p class="eyebrow">Qiita</p>
-            <h3>Qiita @kawauso24</h3>
-            <p class="card-desc">開発メモや研究で得た知見を共有。</p>
-            <a class="card-link" href="https://qiita.com/kawauso24" target="_blank" rel="noreferrer">Visit Qiita</a>
-          </article>
-
-          <article class="card compact reveal">
             <p class="eyebrow">GitHub</p>
             <h3>GitHub Profile</h3>
-            <p class="card-desc">研究・個人開発のコードを公開中。</p>
+            <p class="card-desc">研究・個人開発のコードを公開中</p>
             <a class="card-link" href="https://github.com/kawauso24" target="_blank" rel="noreferrer">Visit GitHub</a>
           </article>
 
           <article class="card compact reveal">
             <p class="eyebrow">Email</p>
             <h3>お問い合わせ</h3>
-            <p class="card-desc">インターン・共同研究・開発に関するご連絡はこちら。</p>
+            <p class="card-desc">インターン・共同研究・開発に関するご連絡はこちら</p>
             <a class="card-link" href="mailto:sakakibara.gota.y6@elms.hokudai.ac.jp">Send Email</a>
           </article>
         </div>
@@ -195,7 +213,7 @@
 
   <footer class="footer">
     <div class="container">
-      <p>© <span id="year"></span> kawauso24 — Built with GitHub Pages</p>
+      <p>© <span id="year"></span> kawauso24 — Built with GitHub Pages. All rights reserved.</p>
     </div>
   </footer>
 

@@ -371,6 +371,42 @@ a:focus-visible {
   font-size: 20px;
 }
 
+.research-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+}
+
+.research-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 22px;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: linear-gradient(150deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.03));
+  box-shadow: var(--shadow);
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.research-card:hover {
+  transform: translateY(-3px);
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--line) 55%);
+  box-shadow: 0 22px 70px rgba(0, 0, 0, 0.55);
+}
+
+.research-card h3 {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+.research-caption {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -416,6 +452,32 @@ a:focus-visible {
   margin: 0;
   color: var(--muted);
   line-height: 1.6;
+}
+
+.pub-meta {
+  margin: 0;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: rgba(10, 11, 15, 0.45);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 6px 12px;
+}
+
+.pub-meta dt {
+  margin: 0;
+  color: var(--accent-hover);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 12px;
+  text-transform: lowercase;
+}
+
+.pub-meta dd {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.45;
 }
 
 .tag-row {
@@ -516,7 +578,8 @@ a:focus-visible {
   .reveal,
   .btn,
   .nav-cta,
-  .career-card {
+  .career-card,
+  .research-card {
     transition: none;
   }
 }
